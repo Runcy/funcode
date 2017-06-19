@@ -1,2 +1,1 @@
-# funcode
-just for fun
+#TestFun
