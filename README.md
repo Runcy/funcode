@@ -1,0 +1,2 @@
+# funcode
+just for fun
