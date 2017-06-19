@@ -1,0 +1,12 @@
+# /etc/primitives.deny: list of service primitive pairs that are not allowed to be sended to the server peer.
+#
+# Per service primitive per line.
+#
+# Format: service primitive
+# 		  service:      Service name.
+#         primitive:    The communication primitive from client to server for closing the 						  connection by server peer.
+#
+# Example: memcache "quit\r\n"
+
+memcache "quit\r\n" #Memcache communication primitive
+redis "QUIT\r\n"

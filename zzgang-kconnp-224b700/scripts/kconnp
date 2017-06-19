@@ -1,0 +1,105 @@
+#!/bin/sh
+
+help(){
+    cat <<EOF
+kconnp actions:
+    -v          : version info.
+    stats       : connections stats info.
+    reload      : reload the cfgs.
+    start       : start the kconnp.
+    stop        : stop the kconnp.
+    restart     : restart the kconnp.
+EOF
+exit;
+}
+
+VER=%%VER%%
+kv=`uname -r`;
+kmconnp="/lib/modules/$kv/kernel/net/kconnp/kconnp.ko";
+kconnp_cfgs="kconnp.conf iports.allow iports.deny primitives.deny";
+kconnp_running="lsmod | grep '\bkconnp\b' > /dev/null";
+
+ver(){
+   echo $VER; 
+}
+
+stats(){
+    if (eval $kconnp_running) 
+    then
+        cat /proc/kconnp/stats.info;
+    else
+        echo "kconnp not running.";
+    fi
+}
+
+reload(){
+    if (eval $kconnp_running)
+    then
+        for f in $kconnp_cfgs
+        do 
+            cat /etc/$f > /proc/kconnp/$f;
+        done;
+    else
+        echo "kconnp not running.";
+    fi
+}
+
+start(){
+    if (eval $kconnp_running)
+    then
+        echo "kconnp already running.";
+        exit;
+    else
+        insmod $kmconnp && reload;
+    fi
+}
+
+stop(){
+    if (eval $kconnp_running)
+    then
+        rmmod $kmconnp; 
+    else 
+        echo "kconnp not running.";
+    fi
+}
+
+restart(){
+    stop;
+    start;
+}
+
+
+
+if test $# -eq 0
+then
+    echo "Non action is passed!\n";
+    help;
+fi
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)
+            ver;
+            ;;
+        stats)
+            stats;
+            ;;
+        reload)
+            reload;
+            ;;
+        start)
+            start;
+            ;;
+        stop)
+            stop;
+            ;;
+        restart)
+            restart;
+            ;;
+        *)
+            echo "Unrecognized param: $1\n";
+            help;
+            ;;
+    esac
+    shift;
+done

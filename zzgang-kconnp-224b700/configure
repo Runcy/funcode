@@ -1,0 +1,146 @@
+#! /bin/sh
+
+help(){
+    cat <<EOF
+
+LKM build params:
+
+    --with-kernel-build-dir=DIR
+        Set kernel module build dir
+    --debug
+        Enable machine restart automatically
+    --clean
+        Clean the Makefile
+
+EOF
+exit;
+}
+
+clean(){
+    echo 'Cleaning...'
+    test -f Makefile && make clean 1>/dev/null;
+    rm -f Makefile;
+    rm -f sys_call_table_ea.h;
+    rm -f local_func_ea.h;
+}
+
+#kernel version.
+kv=`uname -r`;
+
+#kernel system map.
+sysmap_file="";
+
+#kernel build dir.
+kmbd="/lib/modules/${kv}/build";
+
+boot_dir="/boot"
+
+#check sysmap.
+if [ -f "${boot_dir}/System.map-$kv" ]
+then
+    sysmap_file="${boot_dir}/System.map-$kv";
+elif [ -f "${boot_dir}/Systemmap-$kv" ]
+then
+    sysmap_file="${boot_dir}/Systemmap-$kv";
+fi
+
+while [ $# -gt 0 ]
+do
+    case "${1%=*}" in
+        --with-kernel-build-dir)
+            kmbd="${1#*=}";
+            ;;
+        --debug)
+            sysctl -w kernel.panic=1 > /dev/null
+            ;;
+        --clean)
+            clean;
+            exit;
+            ;;
+        --help)
+            help;
+            ;;
+        *)
+            echo "Unrecognized param: ${1%=*}";
+            help;
+            ;;
+    esac
+    shift;
+done
+
+if test ! -d $kmbd || test ! -e $sysmap_file 
+then
+    echo "Error: Can't build the ENV for building the LKM";
+    help;
+else
+    echo "Check kernel devel dir for building LKM... yes";
+    echo "Check kernel sysmap file for building LKM... yes";
+fi
+
+#######################
+#Generate sys calls ea.
+#######################
+
+sys_call_table_ea=`grep '\bsys_call_table\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_socketcall_ea=`grep '\bsys_socketcall\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_connect_ea=`grep '\bsys_connect\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_close_ea=`grep '\bsys_close\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_shutdown_ea=`grep '\bsys_shutdown\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_exit_group_ea=`grep '\bsys_exit_group\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_exit_ea=`grep '\bsys_exit\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_write_ea=`grep '\bsys_write\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_send_ea=`grep '\bsys_send\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+sys_sendto_ea=`grep '\bsys_sendto\b' $sysmap_file | awk '{print $1;}' | sed -e 's/0x//'`;
+
+cat sys_call_table_ea.h.in |
+sed -e "s/%%SYS_CALL_TABLE_EA%%/0x${sys_call_table_ea}/" |
+sed -e "s/%%SYS_SOCKETCALL_EA%%/0x${sys_socketcall_ea}/" | 
+sed -e "s/%%SYS_CONNECT_EA%%/0x${sys_connect_ea}/" |
+sed -e "s/%%SYS_CLOSE_EA%%/0x${sys_close_ea}/" | 
+sed -e "s/%%SYS_SHUTDOWN_EA%%/0x${sys_shutdown_ea}/" | 
+sed -e "s/%%SYS_EXIT_GROUP_EA%%/0x${sys_exit_group_ea}/" | 
+sed -e "s/%%SYS_EXIT_EA%%/0x${sys_exit_ea}/"  | 
+sed -e "s/%%SYS_WRITE_EA%%/0x${sys_write_ea}/" | 
+sed -e "s/%%SYS_SEND_EA%%/0x${sys_send_ea}/" | 
+sed -e "s/%%SYS_SENDTO_EA%%/0x${sys_sendto_ea}/" > sys_call_table_ea.h;
+
+NO_OMIT_FRAME_POINTER=""
+
+machine_type=`uname -m | sed -e 's/^i[0-9]86$/x86_32/'`
+
+case "$machine_type" in
+    'x86_32')
+        machine_type='x86_32'
+        ;;
+    'x86_64')
+        ;;
+    *)
+        echo "Error: Unsurported machine type $machine_type"
+        exit
+        ;;
+esac
+
+echo "Check machine type... $machine_type yes";
+
+if [ "$machine_type" = 'x86_32' ] #32 bits machine
+then
+    NO_OMIT_FRAME_POINTER="export CONFIG_FRAME_POINTER=ON"
+fi
+
+$NO_OMIT_FRAME_POINTER
+
+cat > Makefile <<MF
+obj-m = kconnp.o
+kconnp-objs := connp_entry.o sys_call.o sockp.o connp.o preconnect.o connpd.o sys_socketcalls.o sys_close.o sys_exit.o sys_exit_group.o sys_sendcalls.o hash.o cfg.o lkm_util.o
+
+$NO_OMIT_FRAME_POINTER
+
+all:
+	make -C $kmbd SUBDIRS=\$(PWD) modules
+clean:
+	make -C $kmbd SUBDIRS=\$(PWD) clean
+install:
+	./scripts/install
+MF
+
+echo 'Successful.';
