@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="26011" host="taxas.dd.game" port="26011"  desc="serverid为26011的游戏服务器" />
+        </gameserver>
+</servers>

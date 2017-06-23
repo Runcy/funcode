@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="32041" host="paigow.dd.game" port="32041"  desc="serverid为32041的
+游戏服务器" />
+        </gameserver>
+</servers>

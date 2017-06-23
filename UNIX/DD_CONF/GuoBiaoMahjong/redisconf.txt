@@ -1,0 +1,11 @@
+hset guobiaoMajan_RoomConfig:3:1 tax 5
+hset guobiaoMajan_RoomConfig:3:1 ante 10
+hset guobiaoMajan_RoomConfig:3:1 minmoney 2000
+
+hset guobiaoMajan_RoomConfig:3:2 tax 5
+hset guobiaoMajan_RoomConfig:3:2 ante 100
+hset guobiaoMajan_RoomConfig:3:2 minmoney 10000
+
+hset guobiaoMajan_RoomConfig:3:3 tax 5
+hset guobiaoMajan_RoomConfig:3:3 ante 500
+hset guobiaoMajan_RoomConfig:3:3 minmoney 50000

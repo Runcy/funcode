@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="29810" host="baccarat.dd.game" port="29810"  desc="serverid为29810的
+游戏服务器" />
+        </gameserver>
+</servers>

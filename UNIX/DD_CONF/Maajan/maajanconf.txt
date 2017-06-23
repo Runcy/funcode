@@ -1,0 +1,20 @@
+hset Maajan_RoomConfig:1 minmoney 2400
+hset Maajan_RoomConfig:1 maxmoney 0
+hset Maajan_RoomConfig:1 ante 100
+hset Maajan_RoomConfig:1 tax 5
+hset Maajan_RoomConfig:1 guohu 1
+hset Maajan_RoomConfig:1 maxpoints 300
+
+hset Maajan_RoomConfig:2 minmoney 20000
+hset Maajan_RoomConfig:2 maxmoney 0
+hset Maajan_RoomConfig:2 ante 500
+hset Maajan_RoomConfig:2 tax 5
+hset Maajan_RoomConfig:2 guohu 1
+hset Maajan_RoomConfig:2 maxpoints 300
+
+hset Maajan_RoomConfig:3 minmoney 24000
+hset Maajan_RoomConfig:3 maxmoney 0
+hset Maajan_RoomConfig:3 ante 1000
+hset Maajan_RoomConfig:3 tax 5
+hset Maajan_RoomConfig:3 guohu 1
+hset Maajan_RoomConfig:3 maxpoints 300

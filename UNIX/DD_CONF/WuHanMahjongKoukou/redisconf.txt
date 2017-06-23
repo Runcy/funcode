@@ -1,0 +1,23 @@
+hset WuhanMahjongKoukou_RoomConfig:1 tax 5
+hset WuhanMahjongKoukou_RoomConfig:1 ante 10
+hset WuhanMahjongKoukou_RoomConfig:1 minmoney 1000
+hset WuhanMahjongKoukou_RoomConfig:1 normal_top 1000
+hset WuhanMahjongKoukou_RoomConfig:1 golden_top 1200
+hset WuhanMahjongKoukou_RoomConfig:1 sunshine_top 1500
+hset WuhanMahjongKoukou_RoomConfig:1 sanyang_top 1800
+
+hset WuhanMahjongKoukou_RoomConfig:2 tax 5
+hset WuhanMahjongKoukou_RoomConfig:2 ante 100
+hset WuhanMahjongKoukou_RoomConfig:2 minmoney 5000
+hset WuhanMahjongKoukou_RoomConfig:2 normal_top 1000
+hset WuhanMahjongKoukou_RoomConfig:2 golden_top 1200
+hset WuhanMahjongKoukou_RoomConfig:2 sunshine_top 1500
+hset WuhanMahjongKoukou_RoomConfig:2 sanyang_top 1800
+
+hset WuhanMahjongKoukou_RoomConfig:3 tax 5
+hset WuhanMahjongKoukou_RoomConfig:3 ante 300
+hset WuhanMahjongKoukou_RoomConfig:3 minmoney 7200
+hset WuhanMahjongKoukou_RoomConfig:3 normal_top 1000
+hset WuhanMahjongKoukou_RoomConfig:3 golden_top 1200
+hset WuhanMahjongKoukou_RoomConfig:3 sunshine_top 1500
+hset WuhanMahjongKoukou_RoomConfig:3 sanyang_top 1800

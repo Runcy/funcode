@@ -1,0 +1,4 @@
+hset HunanMajan_RoomConfig:1 tax 5
+hset HunanMajan_RoomConfig:1 ante 10
+hset HunanMajan_RoomConfig:1 minmoney 1000
+

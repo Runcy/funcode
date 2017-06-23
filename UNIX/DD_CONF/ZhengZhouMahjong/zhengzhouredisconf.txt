@@ -1,0 +1,33 @@
+hset ZhengzhouMahjong_RoomConfig:1 tax 5
+hset ZhengzhouMahjong_RoomConfig:1 ante 10
+hset ZhengzhouMahjong_RoomConfig:1 minmoney 1000
+hset ZhengzhouMahjong_RoomConfig:1 xiapao_time 5
+hset ZhengzhouMahjong_RoomConfig:1 xiapao_mul1 1
+hset ZhengzhouMahjong_RoomConfig:1 xiapao_mul2 2
+hset ZhengzhouMahjong_RoomConfig:1 xiapao_mul3 3
+hset ZhengzhouMahjong_RoomConfig:1 max_validation_time 3600
+hset ZhengzhouMahjong_RoomConfig:1 startmoney 1000
+
+hset ZhengzhouMahjong_RoomConfig:2 tax 5
+hset ZhengzhouMahjong_RoomConfig:2 ante 100
+hset ZhengzhouMahjong_RoomConfig:2 minmoney 5000
+hset ZhengzhouMahjong_RoomConfig:2 xiapao_time 5
+hset ZhengzhouMahjong_RoomConfig:2 xiapao_mul1 1
+hset ZhengzhouMahjong_RoomConfig:2 xiapao_mul2 2
+hset ZhengzhouMahjong_RoomConfig:2 xiapao_mul3 3
+hset ZhengzhouMahjong_RoomConfig:2 max_validation_time 3600
+hset ZhengzhouMahjong_RoomConfig:2 startmoney 5000
+
+hset ZhengzhouMahjong_RoomConfig:3 tax 5
+hset ZhengzhouMahjong_RoomConfig:3 ante 300
+hset ZhengzhouMahjong_RoomConfig:3 minmoney 7200
+hset ZhengzhouMahjong_RoomConfig:3 xiapao_time 5
+hset ZhengzhouMahjong_RoomConfig:3 xiapao_mul1 1
+hset ZhengzhouMahjong_RoomConfig:3 xiapao_mul2 2
+hset ZhengzhouMahjong_RoomConfig:3 xiapao_mul3 3
+hset ZhengzhouMahjong_RoomConfig:3 max_validation_time 3600
+hset ZhengzhouMahjong_RoomConfig:3 startmoney 7200
+
+
+
+

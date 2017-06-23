@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="22721" host="tiger.dd.game" port="22721"  desc="serverid为22721的游戏服务器" />
+        </gameserver>
+</servers>

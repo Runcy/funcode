@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="24821" host="hebeimahjong.dd.game" port="24821"  desc="serverid为24821的游戏服务器" />
+        </gameserver>
+</servers>

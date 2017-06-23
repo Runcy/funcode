@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+				<server id="27011" host="flower.dd.game" port="27011"  desc="serverid为307的游戏服务器" />
+        </gameserver>
+</servers>

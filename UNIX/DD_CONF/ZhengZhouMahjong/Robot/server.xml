@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="26990" host="zhengzhou.dd.game" port="26990"  desc="serverid为26990的游戏服务器" />
+                <server id="26991" host="zhengzhou.dd.game" port="26991"  desc="serverid为26991的游戏服务器" />
+                <server id="26992" host="zhengzhou.dd.game" port="26992"  desc="serverid为26992的游戏服务器" />
+                <server id="26993" host="zhengzhou.dd.game" port="26993"  desc="serverid为26993的游戏服务器" />
+        </gameserver>
+</servers>

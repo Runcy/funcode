@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<routedb>
+    <databases route="key / 10000000" >
+        <node id="1" type="mysql" host="master.dd.mysql" port="3306" user="uloguser" passwd="uloguser!@^2016" db="ucenter"/>
+        <node id="2" type="mysql" host="master.dd.mysql" port="3306" user="uloguser" passwd="uloguser!@^2016" db="logchip" />
+    </databases>
+</routedb>

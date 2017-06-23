@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="23901" host="landlord2017.dd.game" port="23801"  desc="level为1的游戏服务器" />
+        </gameserver>
+</servers>

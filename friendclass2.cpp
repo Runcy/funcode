@@ -179,5 +179,10 @@ int main()
 	int nt = atoi(fl.c_str());
 	printf("nt: %d\n", nt);
 	
+	float ip = 123.134;
+	int pu = (int)ip;
+	printf("%d\n", pu);
+	printf("%f\n", pu);
+	
 	return 0;
 }

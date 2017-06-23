@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="23012" host="shuangkou.dd.game" port="23012"  desc="serverid为51的
+游戏服务器" />
+        </gameserver>
+</servers>

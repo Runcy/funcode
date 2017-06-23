@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="22821" host="birdanimal.dd.game" port="22821"  desc="serverid为22821的游戏服务器" />
+        </gameserver>
+</servers>

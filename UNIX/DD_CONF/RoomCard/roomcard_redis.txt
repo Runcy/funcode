@@ -1,0 +1,15 @@
+hset RoomCardConfig:1 type 1
+hset RoomCardConfig:1 maxcount 5
+hset RoomCardConfig:1 price 1000
+
+hset RoomCardConfig:2 type 2
+hset RoomCardConfig:2 maxcount 5
+hset RoomCardConfig:2 price 1000
+
+hset RoomCardConfig:3 type 3
+hset RoomCardConfig:3 maxcount 5
+hset RoomCardConfig:3 price 1000
+
+hset RoomCardConfig:4 type 4
+hset RoomCardConfig:4 maxcount 5
+hset RoomCardConfig:4 price 1000

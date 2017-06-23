@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+        <gameserver>
+                <server id="28301" host="flower2017.dd.game" port="28101"  desc="gamelevel为1的游戏服务器" />
+        </gameserver>
+</servers>

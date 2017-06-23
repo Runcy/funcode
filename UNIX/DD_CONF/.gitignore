@@ -1,0 +1,8 @@
+fabric/fabric.ini
+deploy/conf.py
+deploy/conf.pyc
+.vscode/
+
+*.pyc
+hosts
+preconf

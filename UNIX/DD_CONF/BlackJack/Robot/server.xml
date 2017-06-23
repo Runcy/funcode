@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+	<gameserver>
+		<server id="22411" host="bullfight.dd.game" port="22411"  desc="serverid为5的游戏服务器" />
+	</gameserver>
+</servers>
