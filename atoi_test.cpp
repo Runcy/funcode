@@ -7,5 +7,7 @@ int main()
 	int tmp = atoi(pint);
 	printf("%d\n", tmp);
 	
+	return 0;
+	
 }
 
