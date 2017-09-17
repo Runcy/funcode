@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<servers>
-        <gameserver>
-                <server id="24821" host="guobiaomahjong.dd.game" port="24701"  desc="serverid为24821的游戏服务器" />
-				<server id="24821" host="guobiaomahjong.dd.game" port="24702"  desc="serverid为24821的游戏服务器" />
-				<server id="24821" host="guobiaomahjong.dd.game" port="24703"  desc="serverid为24821的游戏服务器" />
-        </gameserver>
-</servers>

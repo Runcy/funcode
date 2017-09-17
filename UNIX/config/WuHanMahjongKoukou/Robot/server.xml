@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<servers>
-        <gameserver>
-                <server id="20231" host="wuhan.koukou.dd.game" port="20231"  desc="serverid为51的游戏服务器" />
-                <server id="20232" host="wuhan.koukou.dd.game" port="20232"  desc="serverid为51的游戏服务器" />
-                <server id="20233" host="wuhan.koukou.dd.game" port="20233"  desc="serverid为51的游戏服务器" />
-                <server id="20234" host="wuhan.koukou.dd.game" port="20234"  desc="serverid为51的游戏服务器" />
-        </gameserver>
-</servers>

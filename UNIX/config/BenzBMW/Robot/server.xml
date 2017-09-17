@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<servers>
-        <gameserver>
-                <server id="23921" host="benzbmw.dd.game" port="23921"  desc="serverid为23921的游戏服务器" />
-        </gameserver>
-</servers>

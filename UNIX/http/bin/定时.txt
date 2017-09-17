@@ -1,2 +1,0 @@
-[root@localhost ~]# crontab -l                   
-* * * * * sh /home/mo/HttpSvr/bin/check.sh

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<servers>
-        <gameserver>
-                <server id="23011" host="landlord.dd.game" port="23011"  desc="serverid为51的
-游戏服务器" />
-        </gameserver>
-</servers>
